@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHREE SHAKTI -- Craft Your Perfect Custom Jewelry</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <h1>SHREE SHAKTI</h1>
+                    <span class="logo__tagline">Custom Jewelry Artisans</span>
+                </div>
+                
+                <nav class="header__nav" id="headerNav">
+                    <ul class="nav__list">
+                        <li><a href="#home" class="nav__link">Home</a></li>
+                        <li><a href="#customization" class="nav__link">Design Process</a></li>
+                     
+                        <li><a href="#process" class="nav__link">How It Works</a></li>
+                        <li><a href="#testimonials" class="nav__link">Reviews</a></li>
+                        <li><a href="#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+               
+                    <button class="btn btn--outline whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </button>
+                <div class="header__actions">
+                    
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section - Create Your Dream Piece -->
+    <section id="home" class="hero">
+        <div class="hero__background">
+            <div class="floating-elements">
+                <div class="floating-gem floating-gem--1"></div>
+                <div class="floating-gem floating-gem--2"></div>
+                <div class="floating-gem floating-gem--3"></div>
+            </div>
+            <div class="hero__gradient"></div>
+        </div>
+        <div class="hero__content">
+            <div class="container">
+                <div class="hero__text">
+                    <h1 class="hero__title">Craft Your Legacy in Gold</h1>
+                    <p class="hero__subtitle">From concept to creation, we bring your vision to life with handcrafted precision. Design your perfect piece with our master jewelers.</p>
+                    <div class="hero__stats">
+                        <div class="stat">
+                            <div class="stat__number">5000+</div>
+                            <div class="stat__label">Custom Pieces</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">25+</div>
+                            <div class="stat__label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat__number">99.8%</div>
+                            <div class="stat__label">Satisfaction Rate</div>
+                        </div>
+                    </div>
+                    <div class="hero__actions">
+                        <button class="btn btn--primary btn--lg hero__cta" onclick="startCustomization()">
+                            <i class="fas fa-magic"></i>
+                            Start Designing
+                        </button>
+                        <button class="btn btn--outline btn--lg hero__secondary" onclick="scrollToPortfolio()">
+                            <i class="fas fa-images"></i>
+                            View Our Work
+                        </button>
+
+                       
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Customization Wizard -->
+    <section id="customization" class="customization">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Design Your Perfect Piece</h2>
+                <p class="section__subtitle">Follow our interactive process to create jewelry that's uniquely yours</p>
+            </div>
+            
+            <div class="customization__wizard" id="customizationWizard">
+                <div class="wizard__progress">
+                    <div class="progress__bar">
+                        <div class="progress__fill" id="progressFill"></div>
+                    </div>
+                    <div class="progress__steps">
+                        <div class="progress__step active" data-step="1">1</div>
+                        <div class="progress__step" data-step="2">2</div>
+                        <div class="progress__step" data-step="3">3</div>
+                        <div class="progress__step" data-step="4">4</div>
+                        <div class="progress__step" data-step="5">5</div>
+                    </div>
+                </div>
+
+                <div class="wizard__content">
+                    <!-- Step 1: Choose Style -->
+                    <div class="wizard__step active" id="step1">
+                        <h3 class="step__title">Choose Your Style</h3>
+                        <p class="step__description">Select the type of jewelry you'd like to create</p>
+                        <div class="style-grid" id="styleGrid">
+                            <!-- Styles will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Select Metal -->
+                    <div class="wizard__step" id="step2">
+                        <h3 class="step__title">Select Your Metal</h3>
+                        <p class="step__description">Choose the perfect metal for your piece</p>
+                        <div class="metal-options" id="metalOptions">
+                            <!-- Metals will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Pick Stones -->
+                    <div class="wizard__step" id="step3">
+                        <h3 class="step__title">Pick Your Stones</h3>
+                        <p class="step__description">Select gemstones that speak to you</p>
+                        <div class="stones-grid" id="stonesGrid">
+                            <!-- Stones will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Personal Touch -->
+                    <div class="wizard__step" id="step4">
+                        <h3 class="step__title">Add Personal Touch</h3>
+                        <p class="step__description">Make it uniquely yours with custom details</p>
+                        <div class="personal-options">
+                            <div class="form-group">
+                                <label class="form-label">Engraving Text</label>
+                                <input type="text" class="form-control" id="engravingText" placeholder="Enter text for engraving">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Special Requests</label>
+                                <textarea class="form-control" id="specialRequests" rows="3" placeholder="Describe any special design elements or family significance"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Review & Quote -->
+                    <div class="wizard__step" id="step5">
+                        <h3 class="step__title">Review Your Design</h3>
+                        <p class="step__description">Review your selections and get a personalized quote</p>
+                        <div class="design-summary" id="designSummary">
+                            <!-- Summary will be populated by JavaScript -->
+                        </div>
+                        <div class="quote-section">
+                            <div class="estimated-price" id="estimatedPrice">
+                                <span class="price-label">Estimated Price Range:</span>
+                                <span class="price-value">$0 - $0</span>
+                            </div>
+                            <p class="price-note">*Final price will be confirmed during consultation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wizard__actions">
+                    <button class="btn btn--outline" id="prevBtn" style="display: none;">
+                        <i class="fas fa-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button class="btn btn--primary" id="nextBtn">
+                        Next
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="btn btn--primary btn--lg" id="consultationBtn" style="display: none;">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Free Consultation
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Process -->
+    <section id="process" class="process">
+        <div class="container">
+            <h2 class="section__title">How We Create Your Dream Piece</h2>
+            <div class="process__steps" id="processSteps">
+                <!-- Process steps will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us">
+        <div class="container">
+            <div class="why-choose-us__content">
+                <div class="why-choose-us__text">
+                    <h2 class="section__title">Why Choose Golden Elegance</h2>
+                    <div class="features-list">
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <i class="fas fa-user-tie"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h3>Master Craftsmen</h3>
+                                <p>25+ years of expertise with 12 skilled artisans creating exceptional pieces</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h3>Certified Materials</h3>
+                                <p>100% authentic gold and genuine gemstones with certification</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h3>3D Preview</h3>
+                                <p>See your design in 3D before we craft it to perfection</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature__icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature__content">
+                                <h3>Lifetime Warranty</h3>
+                                <p>Complete satisfaction guarantee with lifetime maintenance</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-choose-us__stats">
+                    <div class="stats-card">
+                        <div class="stat-large">
+                            <div class="stat-large__number">5000+</div>
+                            <div class="stat-large__label">Custom Pieces Created</div>
+                        </div>
+                        <div class="stat-large">
+                            <div class="stat-large__number">99.8%</div>
+                            <div class="stat-large__label">Customer Satisfaction</div>
+                        </div>
+                        <div class="stat-large">
+                            <div class="stat-large__number">25+</div>
+                            <div class="stat-large__label">Years of Excellence</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section__title">What Our Customers Say</h2>
+            <div class="testimonials__grid" id="testimonialsGrid">
+                <!-- Testimonials will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Consultation Booking -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Book Your Free Consultation</h2>
+                <p class="section__subtitle">Ready to start creating your dream piece? Let's discuss your vision</p>
+            </div>
+            
+            <div class="contact__content">
+                <div class="contact__form-container">
+                    <div class="glass-card">
+                        <form class="contact__form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Your Name *</label>
+                                    <input type="text" class="form-control" name="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" name="phone" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Preferred Consultation Method</label>
+                                <select class="form-control" name="consultationType">
+                                    <option value="in-person">In-Person Visit</option>
+                                    <option value="video">Video Call</option>
+                                    <option value="phone">Phone Call</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tell Us About Your Vision</label>
+                                <textarea class="form-control" name="message" rows="4" placeholder="Describe your dream piece, inspiration, or any specific requirements"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width btn--lg">
+                                <i class="fas fa-calendar-check"></i>
+                                Book Free Consultation
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="contact__info">
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-card__content">
+                                <h4>Visit Our Atelier</h4>
+                                <p>3rd cross<br>neharunagar, mundgod</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-card__content">
+                                <h4>Consultation Hours</h4>
+                                <p>Mon-Sat: 10AM-7PM<br>Sun: By Appointment</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-card__content">
+                                <h4>Call Us</h4>
+                                <p>9035340369</p>
+                                <p class="phone-note">Free consultation calls</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-card__icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-card__content">
+                                <h4>WhatsApp</h4>
+                                <p>Quick responses</p>
+                                <button class="btn btn--outline btn--sm whatsapp-btn">
+                                    <i class="fab fa-whatsapp"></i>
+                                    Chat Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-proof">
+                        <h4>Follow Our Journey</h4>
+                        <div class="social-links">
+                            <a href="#" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                                <span>@goldenelegance</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <i class="fab fa-facebook"></i>
+                                <span>Golden Elegance</span>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <i class="fab fa-pinterest"></i>
+                                <span>Design Ideas</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__column">
+                    <h3>GOLDEN ELEGANCE</h3>
+                    <p>Crafting personalized jewelry with passion and precision since 1998. Your trusted partner for life's most precious moments.</p>
+                    <div class="footer__certifications">
+                        <div class="certification">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certified Gold Artisan</span>
+                        </div>
+                        <div class="certification">
+                            <i class="fas fa-award"></i>
+                            <span>Excellence in Custom Design</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#">Custom Engagement Rings</a></li>
+                        <li><a href="#">Wedding Band Sets</a></li>
+                        <li><a href="#">Heritage Restoration</a></li>
+                        <li><a href="#">3D Design Preview</a></li>
+                        <li><a href="#">Gemstone Sourcing</a></li>
+                        <li><a href="#">Jewelry Appraisal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Design Process</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Lifetime Warranty</a></li>
+                        <li><a href="#">Consultation Booking</a></li>
+                        <li><a href="#">Shipping Worldwide</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe for design inspiration and exclusive updates on new collections.</p>
+                    <form class="newsletter-form" id="newsletterForm">
+                        <div class="newsletter-input">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn--primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <div class="footer__social">
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <div class="footer__bottom-left">
+                    <p>&copy; 2025 Golden Elegance. All rights reserved.</p>
+                    <div class="footer__links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                    </div>
+                </div>
+                <div class="footer__bottom-right">
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-cc-amex"></i>
+                        <i class="fab fa-paypal"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-actions">
+        <button class="fab-btn whatsapp-fab" id="whatsappFab">
+            <i class="fab fa-whatsapp"></i>
+            <span class="fab-tooltip">Chat on WhatsApp</span>
+        </button>
+        <button class="fab-btn consultation-fab" id="consultationFab">
+            <i class="fas fa-calendar-plus"></i>
+            <span class="fab-tooltip">Book Consultation</span>
+        </button>
+        <button class="back-to-top" id="backToTop">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+    </div>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-widget__header">
+            <div class="chat-widget__info">
+                <div class="chat-avatar">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <div>
+                    <h4>Design Consultant</h4>
+                    <span class="status-online">Online now</span>
+                </div>
+            </div>
+            <button class="chat-widget__close" id="chatClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-widget__body">
+            <div class="chat-message chat-message--received">
+                <p>Hello! I'm here to help you design your perfect piece. What type of jewelry are you looking to create?</p>
+            </div>
+        </div>
+        <div class="chat-widget__footer">
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." id="chatInput">
+                <button class="btn btn--primary" id="chatSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Consultation Booking -->
+    <div class="modal hidden" id="consultationModal">
+        <div class="modal-content glass-card">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3>Book Your Free Consultation</h3>
+                <p>Let's discuss your dream piece in detail</p>
+            </div>
+            <div class="modal-body">
+                <form id="consultationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Full Name *</label>
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address *</label>
+                        <input type="email" class="form-control" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Preferred Date & Time</label>
+                        <input type="datetime-local" class="form-control" name="datetime">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Budget Range</label>
+                        <select class="form-control" name="budget">
+                            <option value="">Select budget range</option>
+                            <option value="5000-10000">5000 - 1,0000</option>
+                            <option value="10000-25000">1,0000 - 2,5000</option>
+                            <option value="25000-50000">2,5000 - 50,000</option>
+                            <option value="50000-100000">5,0000 - 10,0000</option>
+                            <option value="100000+">100,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tell us about your vision</label>
+                        <textarea class="form-control" name="vision" rows="3" placeholder="Describe your dream piece, inspiration, or specific requirements"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">
+                        <i class="fas fa-calendar-check"></i>
+                        Schedule Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="modal-overlay"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
